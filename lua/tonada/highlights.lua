@@ -9,7 +9,7 @@ M.groups = {
   -- CurSearch                            {}, -- Highlighting a search pattern under the cursor (see 'hlsearch')
   -- lCursor                              {}, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
   -- CursorIM                             {}, -- Like Cursor, but used when in IME mode |CursorIM|
-  "CursorColumn",                         { bg = colors.dynamic_black , fg = colors.NONE },
+  "CursorColumn",                         { bg = colors.carbon , fg = colors.NONE },
   "CursorLine",                           { bg = colors.carbon, fg = colors.NONE },
   "Directory",                            { bg = colors.gentle_blue, fg = colors.NONE },
   "DiffAdd",                              { bg = colors.NONE, fg = colors.green },
@@ -36,9 +36,9 @@ M.groups = {
   "MatchParen",                           { link = "MatchWord" },
   "ModeMsg",                              { bg = colors.NONE, fg = colors.light_slate },
   "MsgArea",                              { bg = colors.NONE, fg = colors.light_slate }, -- Area for messages and cmdline
-  -- MsgSeparator                         {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
+  "MsgSeparator",                         { bg = colors.NONE, fg = colors.raisin }, -- Separator for scrolled messages, `msgsep` flag of 'display'
   "MoreMsg",                              { bg = colors.NONE, fg = colors.light_slate }, -- |more-prompt|
-  -- NonText                              {}, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+  "NonText",                              { bg = colors.NONE, fg = colors.raisin }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
   "Normal",                               { bg = colors.lead, fg = colors.lavender }, -- Normal text
   "NormalFloat",                          { bg = colors.dynamic_black, fg = colors.NONE }, -- Normal text in floating windows.
   "FloatBorder",                          { bg = colors.NONE, fg = colors.blue }, -- Border of floating windows.
@@ -107,14 +107,14 @@ M.groups = {
   -- Debug                                {}, --   Debugging statements
   -- Underlined                           { gui = "underline" }, -- Text that stands out, HTML links
   -- Ignore                               { }, -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template)
-  "Error",                                { bg = colors.white_chocolate, fg = colors.chaos_black }, -- Any erroneous construct
-  "Todo",                                 { bg = colors.dynamic_black, fg = colors.weldon }, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+  "Error",                                { bg = colors.lead, fg = colors.pink }, -- Any erroneous construct
+  "Todo",                                 { bg = colors.weldon, fg = colors.white_chocolate }, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
   --
   -- NVIM-LSP
   --
-  "LspReferenceText",                     { bg = colors.onyx, fg = colors.NONE }, -- Used for highlighting "text" references
-  "LspReferenceRead",                     { bg = colors.onyx, fg = colors.NONE }, -- Used for highlighting "read" references
-  "LspReferenceWrite",                    { bg = colors.onyx, fg = colors.NONE }, -- Used for highlighting "write" references
+  "LspReferenceText",                     { bg = colors.onyx, fg = colors.lavender }, -- Used for highlighting "text" references
+  "LspReferenceRead",                     { bg = colors.onyx, fg = colors.lavender }, -- Used for highlighting "read" references
+  "LspReferenceWrite",                    { bg = colors.onyx, fg = colors.lavender }, -- Used for highlighting "write" references
   -- LspCodeLens                          { } , -- Used to color the virtual text of the codelens. See |nvim_buf_set_extmark()|.
   -- LspCodeLensSeparator                 { } , -- Used to color the seperator between two or more code lens.
   "LspSignatureActiveParameter",          { bg = colors.light_blue, fg = colors.chaos_black } , -- Used to highlight the active parameter in the signature help. See |vim.lsp.handlers.signature_help()|.
@@ -294,6 +294,7 @@ M.groups = {
   "TelescopePreviewBorder",               { bg = colors.raisin, fg = colors.raisin },
   "TelescopePreviewTitle",                { bg = colors.green, fg = colors.chaos_black },
   "TelescopePromptTitle",                 { bg = colors.red, fg = colors.chaos_black },
+  "TelescopeResultsTitle",                { bg = colors.blue, fg = colors.chaos_black },
   "TelescopeResultsBorder",               { bg = colors.raisin, fg = colors.raisin },
   "TelescopeResultsDiffAdd",              { bg = colors.NONE, fg = colors.green },
   "TelescopeResultsDiffChange",           { bg = colors.NONE, fg = colors.yellow },
@@ -301,7 +302,7 @@ M.groups = {
   --
   -- NOTIFY
   --
-  "NotifyBackground",                     { bg = colors.raisin, fg = colors.gainsboro },
+  "NotifyBackground",                     { bg = colors.lead, fg = colors.gainsboro },
   "NotifyERRORBorder",                    { bg = colors.NONE, fg = colors.red },
   "NotifyERRORIcon",                      { bg = colors.NONE, fg = colors.red },
   "NotifyERRORTitle",                     { bg = colors.NONE, fg = colors.red },
@@ -324,6 +325,12 @@ M.groups = {
   "NeogitTagDistance",                    { bg = colors.NONE, fg = colors.cyan },
   "NeogitFloatHeader",                    { bg = colors.eerie_black, fg = colors.lavender },
   "NeogitFloatHeaderHighlight",           { bg = colors.dynamic_black, fg = colors.cyan },
+  --
+  -- BLANKLINE
+  --
+  "IblIndent",                            { bg = colors.NONE, fg = colors.raisin },
+  "IblScope",                             { bg = colors.NONE, fg = colors.onyx },
+  "IblWhitespace",                        { bg = colors.NONE, fg = colors.onyx },
 }
 
 return M
