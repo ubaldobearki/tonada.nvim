@@ -25,6 +25,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 * [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 * [NvimTree](https://github.com/nvim-tree/nvim-tree.lua)
 * [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+* [barbar](https://github.com/romgrk/barbar.nvim)
 * [NvimCmp](https://github.com/hrsh7th/nvim-cmp)
 * [NeoGit](https://github.com/NeogitOrg/neogit)
 * [Notify](https://github.com/rcarriga/nvim-notify)
