@@ -16,7 +16,7 @@ M.groups = {
   "DiffChange",                           { bg = colors.NONE, fg = colors.nickel },
   "DiffDelete",                           { bg = colors.NONE, fg = colors.red },
   "DiffText",                             { bg = colors.lead, fg = colors.white },
-  "EndOfBuffer",                          { bg = colors.NONE, fg = colors.carbon },
+  "EndOfBuffer",                          { bg = colors.NONE, fg = colors.lead },
   -- TermCursor                           {}, -- Cursor in a focused terminal
   -- TermCursorNC                         {}, -- Cursor in an unfocused terminal
   "ErrorMsg",                             { bg = colors.chaos_black, fg = colors.white_chocolate },
@@ -267,7 +267,7 @@ M.groups = {
   "CmpItemKindProperty",                  { bg = colors.NONE, fg = colors.white_chocolate },
   "CmpItemKindEnum",                      { bg = colors.NONE, fg = colors.blue },
   "CmpItemKindUnit",                      { bg = colors.NONE, fg = colors.pastel_gray },
-  "CmpItemKindClass",                     { bg = colors.NONE, fg = colors.rackley },
+  "CmpItemKindClass",                     { bg = colors.NONE, fg = colors.blue },
   "CmpItemKindFile",                      { bg = colors.NONE, fg = colors.gentle_blue },
   "CmpItemKindInterface",                 { bg = colors.NONE, fg = colors.green },
   "CmpItemKindColor",                     { bg = colors.NONE, fg = colors.white },
@@ -282,6 +282,38 @@ M.groups = {
   "CmpItemKindCodeium",                   { bg = colors.NONE, fg = colors.green },
   "CmpItemKindTabNine",                   { bg = colors.NONE, fg = colors.light_pink },
   "CmpItemKindSuperMaven",                { bg = colors.NONE, fg = colors.yellow },
+  --********************
+  -- BLINK-CMP
+  --********************
+  "BlinkCmpKindConstant",                  { bg = colors.NONE, fg = colors.silver },
+  "BlinkCmpKindFunction",                  { bg = colors.NONE, fg = colors.gentle_blue },
+  "BlinkCmpKindIdentifier",                { bg = colors.NONE, fg = colors.white_chocolate },
+  "BlinkCmpKindField",                     { bg = colors.NONE, fg = colors.white_chocolate },
+  "BlinkCmpKindVariable",                  { bg = colors.NONE, fg = colors.pastel_gray },
+  "BlinkCmpKindSnippet",                   { bg = colors.NONE, fg = colors.red },
+  "BlinkCmpKindText",                      { bg = colors.NONE, fg = colors.light_slate },
+  "BlinkCmpKindStructure",                 { bg = colors.NONE, fg = colors.pastel_gray },
+  "BlinkCmpKindType",                      { bg = colors.NONE, fg = colors.weldon },
+  "BlinkCmpKindKeyword",                   { bg = colors.NONE, fg = colors.gentle_blue },
+  "BlinkCmpKindMethod",                    { bg = colors.NONE, fg = colors.gentle_blue },
+  "BlinkCmpKindConstructor",               { bg = colors.NONE, fg = colors.blue },
+  "BlinkCmpKindFolder",                    { bg = colors.NONE, fg = colors.gentle_blue },
+  "BlinkCmpKindModule",                    { bg = colors.NONE, fg = colors.weldon },
+  "BlinkCmpKindProperty",                  { bg = colors.NONE, fg = colors.white_chocolate },
+  "BlinkCmpKindEnum",                      { bg = colors.NONE, fg = colors.blue },
+  "BlinkCmpKindUnit",                      { bg = colors.NONE, fg = colors.pastel_gray },
+  "BlinkCmpKindClass",                     { bg = colors.NONE, fg = colors.rackley },
+  "BlinkCmpKindFile",                      { bg = colors.NONE, fg = colors.gentle_blue },
+  "BlinkCmpKindInterface",                 { bg = colors.NONE, fg = colors.green },
+  "BlinkCmpKindColor",                     { bg = colors.NONE, fg = colors.white },
+  "BlinkCmpKindReference",                 { bg = colors.NONE, fg = colors.lavender },
+  "BlinkCmpKindEnumMember",                { bg = colors.NONE, fg = colors.purple },
+  "BlinkCmpKindStruct",                    { bg = colors.NONE, fg = colors.pastel_gray },
+  "BlinkCmpKindValue",                     { bg = colors.NONE, fg = colors.cyan },
+  "BlinkCmpKindEvent",                     { bg = colors.NONE, fg = colors.yellow },
+  "BlinkCmpKindOperator",                  { bg = colors.NONE, fg = colors.lavender },
+  "BlinkCmpKindTypeParameter",             { bg = colors.NONE, fg = colors.white_chocolate },
+  "BlinkCmpKindCopilot",                   { bg = colors.NONE, fg = colors.green },
   --********************
   -- TELESCOPE
   --********************
