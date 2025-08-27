@@ -19,7 +19,7 @@ M.groups = {
   "EndOfBuffer",                          { bg = colors.NONE, fg = colors.lead },
   -- TermCursor                           {}, -- Cursor in a focused terminal
   -- TermCursorNC                         {}, -- Cursor in an unfocused terminal
-  "ErrorMsg",                             { bg = colors.chaos_black, fg = colors.white_chocolate },
+  "ErrorMsg",                             { bg = colors.NONE, fg = colors.light_pink },
   "VertSplit",                            { bg = colors.NONE, fg = colors.carbon },
   "Folded",                               { bg = colors.lead, fg = colors.nickel },
   "FoldColumn",                           { bg = colors.NONE, fg = colors.NONE }, -- 'foldcolumn'
