@@ -4,11 +4,8 @@ local M = {}
 
 M.groups = {
   "ColorColumn",                          { bg = colors.carbon, fg = colors.NONE },
-  "Conceal",                              { bg = colors.NONE, fg = colors.NONE }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
-  "Cursor",                               { bg = colors.lavender, fg = colors.chaos_black }, -- Character under the cursor
-  -- CurSearch                            {}, -- Highlighting a search pattern under the cursor (see 'hlsearch')
-  -- lCursor                              {}, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
-  -- CursorIM                             {}, -- Like Cursor, but used when in IME mode |CursorIM|
+  "Conceal",                              { bg = colors.NONE, fg = colors.NONE },
+  "Cursor",                               { bg = colors.lavender, fg = colors.chaos_black },
   "CursorColumn",                         { bg = colors.dynamic_black , fg = colors.NONE },
   "CursorLine",                           { bg = colors.carbon, fg = colors.NONE },
   "Directory",                            { bg = colors.gentle_blue, fg = colors.NONE },
@@ -17,107 +14,82 @@ M.groups = {
   "DiffDelete",                           { bg = colors.NONE, fg = colors.red },
   "DiffText",                             { bg = colors.lead, fg = colors.white },
   "EndOfBuffer",                          { bg = colors.NONE, fg = colors.lead },
-  -- TermCursor                           {}, -- Cursor in a focused terminal
-  -- TermCursorNC                         {}, -- Cursor in an unfocused terminal
   "ErrorMsg",                             { bg = colors.NONE, fg = colors.light_pink },
   "VertSplit",                            { bg = colors.NONE, fg = colors.carbon },
   "Folded",                               { bg = colors.lead, fg = colors.nickel },
-  "FoldColumn",                           { bg = colors.NONE, fg = colors.NONE }, -- 'foldcolumn'
-  "SignColumn",                           { bg = colors.NONE, fg = colors.nickel }, -- Column where |signs| are displayed
-  "IncSearch",                            { bg = colors.silver, fg = colors.dynamic_black }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-  "Substitute",                           { bg = colors.weldon, fg = colors.dynamic_black }, -- |:substitute| replacement text highlighting
-  "LineNr",                               { bg = colors.NONE, fg = colors.arsenic }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-  -- LineNrAbove                          {}, -- Line number for when the 'relativenumber' option is set, above the cursor line
-  -- LineNrBelow                          {}, -- Line number for when the 'relativenumber' option is set, below the cursor line
+  "FoldColumn",                           { bg = colors.NONE, fg = colors.NONE },
+  "SignColumn",                           { bg = colors.NONE, fg = colors.nickel },
+  "IncSearch",                            { bg = colors.silver, fg = colors.dynamic_black },
+  "Substitute",                           { bg = colors.weldon, fg = colors.dynamic_black },
+  "LineNr",                               { bg = colors.NONE, fg = colors.arsenic },
   "CursorLineNr",                         { bg = colors.NONE, fg = colors.white },
   "CursorLineFold",                       { bg = colors.lead, fg = colors.nickel },
   "CursorLineSign",                       { bg = colors.NONE, fg = colors.onyx },
   "MatchWord",                            { bg = colors.arsenic, fg = colors.white },
   "MatchParen",                           { link = "MatchWord" },
   "ModeMsg",                              { bg = colors.NONE, fg = colors.light_slate },
-  "MsgArea",                              { bg = colors.NONE, fg = colors.light_slate }, -- Area for messages and cmdline
-  -- MsgSeparator                         {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
-  "MoreMsg",                              { bg = colors.NONE, fg = colors.light_slate }, -- |more-prompt|
-  -- NonText                              {}, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-  "Normal",                               { bg = colors.lead, fg = colors.lavender }, -- Normal text
-  "NormalFloat",                          { bg = colors.dynamic_black, fg = colors.NONE }, -- Normal text in floating windows.
-  "FloatBorder",                          { bg = colors.NONE, fg = colors.blue }, -- Border of floating windows.
-  "FloatTitle",                           { bg = colors.arsenic, fg = colors.white }, -- Title of floating windows.
-  "NormalNC",                             { bg = colors.NONE, fg = colors.NONE }, -- normal text in non-current windows
-  "Pmenu",                                { bg = colors.raisin, fg = colors.NONE }, -- Popup menu: Normal item.
-  "PmenuSel",                             { bg = colors.weldon, fg = colors.chaos_black }, -- Popup menu: Selected item.
-  -- PmenuKind                            {}, -- Popup menu: Normal item "kind"
-  -- PmenuKindSel                         {}, -- Popup menu: Selected item "kind"
-  -- PmenuExtra                           {}, -- Popup menu: Normal item "extra text"
-  -- PmenuExtraSel                        {}, -- Popup menu: Selected item "extra text"
+  "MsgArea",                              { bg = colors.NONE, fg = colors.light_slate },
+  "MoreMsg",                              { bg = colors.NONE, fg = colors.light_slate },
+  "Normal",                               { bg = colors.lead, fg = colors.lavender },
+  "NormalFloat",                          { bg = colors.dynamic_black, fg = colors.NONE },
+  "FloatBorder",                          { bg = colors.NONE, fg = colors.blue },
+  "FloatTitle",                           { bg = colors.arsenic, fg = colors.white },
+  "NormalNC",                             { bg = colors.NONE, fg = colors.NONE },
+  "Pmenu",                                { bg = colors.raisin, fg = colors.NONE },
+  "PmenuSel",                             { bg = colors.weldon, fg = colors.chaos_black },
   "PmenuSbar",                            { bg = colors.raisin, fg = colors.NONE },
   "PmenuThumb",                           { bg = colors.arsenic, fg = colors.NONE },
   "Question",                             { bg = colors.NONE, fg = colors.gentle_blue },
   "QuickFixLine",                         { bg = colors.dynamic_black, fg = colors.NONE },
   "Search",                               { bg = colors.weldon, fg = colors.dynamic_black },
   "SpecialKey",                           { bg = colors.NONE, fg = colors.onyx },
-  -- SpellBad                             {}, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-  -- SpellCap                             {}, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-  -- SpellLocal                           {}, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-  -- SpellRare                            {}, -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
-  "StatusLine",                           { bg = colors.dynamic_black, fg = colors.NONE }, -- Status line of current window
-  -- StatusLineNC                         {}, -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-  -- TabLine                              {}, -- Tab pages line, not active tab page label
-  "TabLineFill",                          { bg = colors.eerie_black, fg = colors.NONE }, -- Tab pages line, where there are no labels
-  -- TabLineSel                           { }, -- Tab pages line, active tab page label
-  "Title",                                { bg = colors.NONE, fg = colors.gentle_blue  }, -- Titles for output from ":set all", ":autocmd" etc.
-  "Visual",                               { bg = colors.onyx, fg = colors.NONE }, -- Visual mode selection
-  "VisualNOS",                            { bg = colors.NONE, fg = colors.white_chocolate }, -- Visual mode selection when vim is "Not Owning the Selection".
-  "WarningMsg",                           { bg = colors.NONE, fg = colors.white_chocolate }, -- Warning messages
-  -- Whitespace                           { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-  "Winseparator",                         { bg = colors.NONE, fg = colors.carbon }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
-  "WildMenu",                             { bg = colors.weldon, fg = colors.white_chocolate }, -- Current match in 'wildmenu' completion
-  "WinBar",                               { bg = colors.NONE, fg = colors.NONE }, -- Window bar of current window
-  "WinBarNC",                             { bg = colors.NONE, fg = colors.NONE }, -- Window bar of not-current windows
-  "Comment",                              { bg = colors.NONE, fg = colors.quartz }, -- Any comment
-  "Constant",                             { bg = colors.NONE, fg = colors.white_chocolate }, -- (*) Any constant
-  "String",                               { bg = colors.NONE, fg = colors.light_blue }, --   A string constant: "this is a string"
-  "Character",                            { bg = colors.NONE, fg = colors.light_blue }, --   A character constant: 'c', '\n'
-  "Number",                               { bg = colors.NONE, fg = colors.purple }, --   A number constant: 234, 0xff
-  "Boolean",                              { bg = colors.NONE, fg = colors.purple }, --   A boolean constant: TRUE, false
-  "Float",                                { bg = colors.NONE, fg = colors.purple }, --   A floating point constant: 2.3e10
-  "Identifier",                           { bg = colors.NONE, fg = colors.lavender, sp = "none" }, -- (*) Any variable name
-  "Function",                             { bg = colors.NONE, fg = colors.gentle_blue }, --   Function name (also: methods for classes)
-  "Statement",                            { bg = colors.NONE, fg = colors.pastel_gray }, -- (*) Any statement
-  "Conditional",                          { bg = colors.NONE, fg = colors.pastel_gray }, --   if, then, else, endif, switch, etc.
-  "Repeat",                               { bg = colors.NONE, fg = colors.pastel_gray }, --   for, do, while, etc.
-  "Label",                                { bg = colors.NONE, fg = colors.pastel_gray }, --   case, default, etc.
-  "Operator",                             { bg = colors.NONE, fg = colors.orange, sp = "none" }, --   "sizeof", "+", "*", etc.
-  "Keyword",                              { bg = colors.NONE, fg = colors.pastel_gray }, --   any other keyword
-  "Exception",                            { bg = colors.NONE, fg = colors.white_chocolate }, --   try, catch, throw
-  "PreProc",                              { bg = colors.NONE, fg = colors.weldon }, -- (*) Generic Preprocessor
-  "Include",                              { bg = colors.NONE, fg = colors.light_blue }, --   Preprocessor #include
-  "Define",                               { bg = colors.NONE, fg = colors.pastel_gray, sp = "none" }, --   Preprocessor #define
-  "Macro",                                { bg = colors.NONE, fg = colors.white_chocolate }, --   Same as Define
-  "PreCondit",                            { bg = colors.NONE, fg = colors.white_chocolate }, --   Preprocessor #if, #else, #endif, etc.
-  "Type",                                 { bg = colors.NONE, fg = colors.white_chocolate, sp = "none" }, -- (*) int, long, char, etc.
-  "StorageClass",                         { bg = colors.NONE, fg = colors.white_chocolate }, --   static, register, volatile, etc.
-  "Structure",                            { bg = colors.NONE, fg = colors.white_chocolate }, --   struct, union, enum, etc.
-  "Typedef",                              { bg = colors.NONE, fg = colors.white_chocolate }, --   A typedef
-  "Special",                              { bg = colors.NONE, fg = colors.gainsboro }, -- (*) Any special symbol
-  "SpecialChar",                          { bg = colors.NONE, fg = colors.gentle_blue }, --   Special character in a constant
-  "Tag",                                  { bg = colors.NONE, fg = colors.weldon }, --   You can use CTRL-] on this
-  -- Delimiter                            {}, --   Character that needs attention
-  -- SpecialComment                       {}, --   Special things inside a comment (e.g. '\n')
-  -- Debug                                {}, --   Debugging statements
-  -- Underlined                           { gui = "underline" }, -- Text that stands out, HTML links
-  -- Ignore                               { }, -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template)
-  "Error",                                { bg = colors.white_chocolate, fg = colors.chaos_black }, -- Any erroneous construct
-  "Todo",                                 { bg = colors.dynamic_black, fg = colors.weldon }, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+  "StatusLine",                           { bg = colors.dynamic_black, fg = colors.NONE },
+  "TabLineFill",                          { bg = colors.eerie_black, fg = colors.NONE },
+  "Title",                                { bg = colors.NONE, fg = colors.gentle_blue  },
+  "Visual",                               { bg = colors.onyx, fg = colors.NONE },
+  "VisualNOS",                            { bg = colors.NONE, fg = colors.white_chocolate },
+  "WarningMsg",                           { bg = colors.NONE, fg = colors.white_chocolate },
+  "Winseparator",                         { bg = colors.NONE, fg = colors.carbon },
+  "WildMenu",                             { bg = colors.weldon, fg = colors.white_chocolate },
+  "WinBar",                               { bg = colors.NONE, fg = colors.NONE },
+  "WinBarNC",                             { bg = colors.NONE, fg = colors.NONE },
+  "Comment",                              { bg = colors.NONE, fg = colors.quartz },
+  "Constant",                             { bg = colors.NONE, fg = colors.white_chocolate },
+  "String",                               { bg = colors.NONE, fg = colors.light_blue },
+  "Character",                            { bg = colors.NONE, fg = colors.light_blue },
+  "Number",                               { bg = colors.NONE, fg = colors.purple },
+  "Boolean",                              { bg = colors.NONE, fg = colors.purple },
+  "Float",                                { bg = colors.NONE, fg = colors.purple },
+  "Identifier",                           { bg = colors.NONE, fg = colors.lavender, sp = "none" },
+  "Function",                             { bg = colors.NONE, fg = colors.gentle_blue },
+  "Statement",                            { bg = colors.NONE, fg = colors.pastel_gray },
+  "Conditional",                          { bg = colors.NONE, fg = colors.pastel_gray },
+  "Repeat",                               { bg = colors.NONE, fg = colors.pastel_gray },
+  "Label",                                { bg = colors.NONE, fg = colors.pastel_gray },
+  "Operator",                             { bg = colors.NONE, fg = colors.orange, sp = "none" },
+  "Keyword",                              { bg = colors.NONE, fg = colors.pastel_gray },
+  "Exception",                            { bg = colors.NONE, fg = colors.white_chocolate },
+  "PreProc",                              { bg = colors.NONE, fg = colors.weldon },
+  "Include",                              { bg = colors.NONE, fg = colors.light_blue },
+  "Define",                               { bg = colors.NONE, fg = colors.pastel_gray, sp = "none" },
+  "Macro",                                { bg = colors.NONE, fg = colors.white_chocolate },
+  "PreCondit",                            { bg = colors.NONE, fg = colors.white_chocolate },
+  "Type",                                 { bg = colors.NONE, fg = colors.white_chocolate, sp = "none" },
+  "StorageClass",                         { bg = colors.NONE, fg = colors.white_chocolate },
+  "Structure",                            { bg = colors.NONE, fg = colors.white_chocolate },
+  "Typedef",                              { bg = colors.NONE, fg = colors.white_chocolate },
+  "Special",                              { bg = colors.NONE, fg = colors.gainsboro },
+  "SpecialChar",                          { bg = colors.NONE, fg = colors.gentle_blue },
+  "Tag",                                  { bg = colors.NONE, fg = colors.weldon },
+  "Error",                                { bg = colors.white_chocolate, fg = colors.chaos_black },
+  "Todo",                                 { bg = colors.dynamic_black, fg = colors.weldon },
   --********************
   -- NVIM-LSP
   --********************
-  "LspReferenceText",                     { bg = colors.onyx, fg = colors.NONE }, -- Used for highlighting "text" references
-  "LspReferenceRead",                     { bg = colors.onyx, fg = colors.NONE }, -- Used for highlighting "read" references
-  "LspReferenceWrite",                    { bg = colors.onyx, fg = colors.NONE }, -- Used for highlighting "write" references
-  -- LspCodeLens                          { } , -- Used to color the virtual text of the codelens. See |nvim_buf_set_extmark()|.
-  -- LspCodeLensSeparator                 { } , -- Used to color the seperator between two or more code lens.
-  "LspSignatureActiveParameter",          { bg = colors.light_blue, fg = colors.chaos_black } , -- Used to highlight the active parameter in the signature help. See |vim.lsp.handlers.signature_help()|.
+  "LspReferenceText",                     { bg = colors.onyx, fg = colors.NONE },
+  "LspReferenceRead",                     { bg = colors.onyx, fg = colors.NONE },
+  "LspReferenceWrite",                    { bg = colors.onyx, fg = colors.NONE },
+  "LspSignatureActiveParameter",          { bg = colors.light_blue, fg = colors.chaos_black },
   "DiagnosticError",                      { bg = colors.NONE, fg = colors.red },
   "DiagnosticWarn",                       { bg = colors.NONE, fg = colors.yellow },
   "DiagnosticInfo",                       { bg = colors.NONE, fg = colors.blue },
@@ -126,63 +98,63 @@ M.groups = {
   --********************
   -- TREESITTER
   --********************
-  "@text.literal",                        { bg = colors.NONE, fg = colors.silver }, -- Comment
-  "@text.reference",                      { bg = colors.NONE, fg = colors.lavender }, -- Identifier
-  "@text.title",                          { bg = colors.NONE, fg = colors.silver }, -- Title
-  "@text.uri",                            { bg = colors.NONE, fg = colors.silver }, -- Underlined
-  "@text.underline",                      { bg = colors.NONE, fg = colors.gentle_blue, underline = true }, -- Underlined
-  "@text.todo",                           { bg = colors.NONE, fg = colors.silver }, -- Todo
-  "@comment",                             { bg = colors.NONE, fg = colors.quartz }, -- Comment
-  "@punctuation",                         { bg = colors.NONE, fg = colors.gentle_blue }, -- Delimiter
-  "@punctuation.delimiter",               { bg = colors.NONE, fg = colors.nickel }, -- Delimiter
-  "@punctuation.bracket",                 { bg = colors.NONE, fg = colors.red }, -- Delimiter
-  "@constant",                            { bg = colors.NONE, fg = colors.white_chocolate }, -- Constant
-  "@constant.builtin",                    { bg = colors.NONE, fg = colors.purple }, -- Special
-  "@constant.macro",                      { bg = colors.NONE, fg = colors.white_chocolate }, -- Define
-  "@define",                              { bg = colors.NONE, fg = colors.white_chocolate }, -- Define
-  "@macro",                               { link = "Macro" }, -- Macro
-  "@string",                              { bg = colors.NONE, fg = colors.light_blue }, -- String
-  "@string.regex",                        { bg = colors.NONE, fg = colors.gainsboro }, -- SpecialChar
-  "@string.escape",                       { bg = colors.NONE, fg = colors.gainsboro }, -- SpecialChar
-  "@string.special",                      { bg = colors.NONE, fg = colors.gainsboro }, -- SpecialChar
-  "@character",                           { bg = colors.NONE, fg = colors.white_chocolate }, -- Character
-  "@character.special",                   { bg = colors.NONE, fg = colors.white_chocolate }, -- SpecialChar
-  "@number",                              { bg = colors.NONE, fg = colors.purple }, -- Number
-  "@boolean",                             { link = "Boolean" }, -- Boolean
-  "@float",                               { link = "Float" }, -- Float
-  "@function",                            { bg = colors.NONE, fg = colors.gentle_blue }, -- Function
-  "@function.call",                       { bg = colors.NONE, fg = colors.gentle_blue }, -- Function
-  "@function.builtin",                    { bg = colors.NONE, fg = colors.gentle_blue }, -- Special
-  "@function.macro",                      { bg = colors.NONE, fg = colors.white_chocolate }, -- Macro
-  "@function.method",                     { bg = colors.NONE, fg = colors.gentle_blue }, -- Function
-  "@function.method.call",                { bg = colors.NONE, fg = colors.gentle_blue }, -- Function
-  "@parameter",                           { link = "Identifier" }, -- Identifier
-  "@method",                              { bg = colors.NONE, fg = colors.gentle_blue }, -- Function
-  "@field",                               { link = "Identifier" }, -- Identifier
-  "@property",                            { link = "Identifier" }, -- Identifier
-  "@constructor",                         { bg = colors.NONE, fg = colors.gainsboro }, -- Special
-  "@conditional",                         { link = "Conditional" }, -- Conditional
-  "@repeat",                              { link = "Repeat" }, -- Repeat
-  "@label",                               { link = "Label" }, -- Label
-  "@operator",                            { bg = colors.NONE, fg = colors.orange }, -- Operator
-  "@keyword",                             { bg = colors.NONE, fg = colors.pastel_gray }, -- Keyword
-  "@keyword.return",                      { bg = colors.NONE, fg = colors.pastel_gray }, -- Keyword
-  "@exception",                           { bg = colors.NONE, fg = colors.white_chocolate }, -- Exception
-  "@variable",                            { bg = colors.NONE, fg = colors.lavender }, -- Identifier
-  "@variable.parameter",                  { bg = colors.NONE, fg = colors.pastel_gray }, -- Identifier
-  "@variable.member",                     { bg = colors.NONE, fg = colors.blue }, -- Identifier
-  "@type",                                { bg = colors.NONE, fg = colors.blue }, -- Type
-  "@type.definition",                     { bg = colors.NONE, fg = colors.weldon }, -- Typedef
-  "@type.definition",                     { bg = colors.NONE, fg = colors.light_blue }, -- Typedef
-  "@module",                              { bg = colors.NONE, fg = colors.light_blue }, -- Typedef
-  "@storageclass",                        { link = "StorageClass"}, -- StorageClass
-  "@structure",                           { link = "Structure"}, -- Structure
-  "@namespace",                           { link = "Identifier"}, -- Identifier
-  "@include",                             { link = "Include"}, -- Include
+  "@text.literal",                        { bg = colors.NONE, fg = colors.silver },
+  "@text.reference",                      { bg = colors.NONE, fg = colors.lavender },
+  "@text.title",                          { bg = colors.NONE, fg = colors.silver },
+  "@text.uri",                            { bg = colors.NONE, fg = colors.silver },
+  "@text.underline",                      { bg = colors.NONE, fg = colors.gentle_blue, underline = true },
+  "@text.todo",                           { bg = colors.NONE, fg = colors.silver },
+  "@comment",                             { bg = colors.NONE, fg = colors.quartz },
+  "@punctuation",                         { bg = colors.NONE, fg = colors.gentle_blue },
+  "@punctuation.delimiter",               { bg = colors.NONE, fg = colors.nickel },
+  "@punctuation.bracket",                 { bg = colors.NONE, fg = colors.red },
+  "@constant",                            { bg = colors.NONE, fg = colors.white_chocolate },
+  "@constant.builtin",                    { bg = colors.NONE, fg = colors.purple },
+  "@constant.macro",                      { bg = colors.NONE, fg = colors.white_chocolate },
+  "@define",                              { bg = colors.NONE, fg = colors.white_chocolate },
+  "@macro",                               { link = "Macro" },
+  "@string",                              { bg = colors.NONE, fg = colors.light_blue },
+  "@string.regex",                        { bg = colors.NONE, fg = colors.gainsboro },
+  "@string.escape",                       { bg = colors.NONE, fg = colors.gainsboro },
+  "@string.special",                      { bg = colors.NONE, fg = colors.gainsboro },
+  "@character",                           { bg = colors.NONE, fg = colors.white_chocolate },
+  "@character.special",                   { bg = colors.NONE, fg = colors.white_chocolate },
+  "@number",                              { bg = colors.NONE, fg = colors.purple },
+  "@boolean",                             { link = "Boolean" },
+  "@float",                               { link = "Float" },
+  "@function",                            { bg = colors.NONE, fg = colors.gentle_blue },
+  "@function.call",                       { bg = colors.NONE, fg = colors.gentle_blue },
+  "@function.builtin",                    { bg = colors.NONE, fg = colors.gentle_blue },
+  "@function.macro",                      { bg = colors.NONE, fg = colors.white_chocolate },
+  "@function.method",                     { bg = colors.NONE, fg = colors.gentle_blue },
+  "@function.method.call",                { bg = colors.NONE, fg = colors.gentle_blue },
+  "@parameter",                           { link = "Identifier" },
+  "@method",                              { bg = colors.NONE, fg = colors.gentle_blue },
+  "@field",                               { link = "Identifier" },
+  "@property",                            { link = "Identifier" },
+  "@constructor",                         { bg = colors.NONE, fg = colors.gainsboro },
+  "@conditional",                         { link = "Conditional" },
+  "@repeat",                              { link = "Repeat" },
+  "@label",                               { link = "Label" },
+  "@operator",                            { bg = colors.NONE, fg = colors.orange },
+  "@keyword",                             { bg = colors.NONE, fg = colors.pastel_gray },
+  "@keyword.return",                      { bg = colors.NONE, fg = colors.pastel_gray },
+  "@exception",                           { bg = colors.NONE, fg = colors.white_chocolate },
+  "@variable",                            { bg = colors.NONE, fg = colors.lavender },
+  "@variable.parameter",                  { bg = colors.NONE, fg = colors.pastel_gray },
+  "@variable.member",                     { bg = colors.NONE, fg = colors.blue },
+  "@type",                                { bg = colors.NONE, fg = colors.blue },
+  "@type.definition",                     { bg = colors.NONE, fg = colors.weldon },
+  "@type.definition",                     { bg = colors.NONE, fg = colors.light_blue },
+  "@module",                              { bg = colors.NONE, fg = colors.light_blue },
+  "@storageclass",                        { link = "StorageClass"},
+  "@structure",                           { link = "Structure"},
+  "@namespace",                           { link = "Identifier"},
+  "@include",                             { link = "Include"},
   --CPP
-  --"@preproc",                           {}, -- PreProc
-  --"@debug",                             {}, -- Debug
-  --"@tag",                               {}, -- Tag
+  --"@preproc",                           {},
+  --"@debug",                             {},
+  --"@tag",                               {},
   "@lsp.mod.constructorOrDestructor",     { bg = colors.NONE, fg = colors.pastel_gray },
   --********************
   -- NVIM-TREE
